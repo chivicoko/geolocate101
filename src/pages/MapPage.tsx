@@ -44,20 +44,20 @@ const MapPage = () => {
 
 
   return (
-    <div className="App flex h-screen">
+    <div className="App flex flex-col md:flex-row h-[100%] min-h-screen">
 
-      <div className="w-1/3 py-6 border-r-2 border-gray-600 border-dashed px-4">
-        <h1 className="text-center text-3xl">Proximity-Based User Locator</h1>
+      <div className="h-1/2 md:h-screen md:w-1/3 pt-6 md:py-6 border-0 md:border-r-2 border-gray-600 border-dashed px-4">
+        <h1 className="text-center text-xl md:text-3xl font-semibold">Proximity-Based User Locator</h1>
 
         <div className="w-full flex items-center justify-center">
-          <div className="w-full border-2 border-gray-700 border-dashed rounded-md my-4 px-6">
+          <div className="w-full border-2 border-gray-700 border-dashed rounded-md my-2 md:my-4 px-3 md:px-2 lg:px-6">
             {/* Address Form */}
             <AddressForm onAddressSubmit={handleAddressSubmit} />
 
             {/* Radius Toggling Area */}
             <div className="flex w-full flex-col items-center space-y-2 border-t-2 py-2 border-dashed">
-              <label htmlFor="radius-range" className="md:text-md font-medium text-gray-700">
-                Adjust Search Radius: <span className="font-bold text-blue-600">{radius} meters</span>
+              <label htmlFor="radius-range" className="md:text-md font-medium text-gray-700 flex gap-2 items-center justify-center flex-wrap">
+                <span>Adjust Search Radius:</span> <span className="font-bold text-blue-600">{radius} meters</span>
               </label>
 
               <input
@@ -72,8 +72,8 @@ const MapPage = () => {
                 className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
 
-              <p className="text-sm text-center text-gray-600">
-                Drag the slider to adjust the search radius (500m to 5000m).
+              <p className="text-xs sm:text-sm text-center text-gray-600">
+                Drag <span className='hidden sm:inline'>the slider</span> to adjust the search radius (500m to 5000m).
               </p>
             </div>
           </div>
@@ -83,10 +83,10 @@ const MapPage = () => {
         <UserList users={nearbyUsers} radius={radius} />
       </div>
 
-      <div className="w-2/3">
+      {/* <div className="w-full md:w-2/3"> */}
         {/* Map Container */}
         <MapWrapper currentLocation={currentLocation} nearbyUsers={nearbyUsers} onMarkerDragEnd={handleMarkerDragEnd} />
-      </div>
+      {/* </div> */}
 
     </div>
   );

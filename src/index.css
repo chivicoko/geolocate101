@@ -82,3 +82,24 @@ button:focus-visible {
 .leaflet-bottom.leaflet-right {
   display: none !important;
 }
+
+/* scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  /* display: none; */
+  height: 4px;
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  /* background: #E3E4E6; */
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #3a5eeb;
+  border-radius: 8px;
+  width: 2px;
+  cursor: pointer;
+}

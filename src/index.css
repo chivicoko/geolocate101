@@ -77,3 +77,8 @@ button:focus-visible {
   }
 } */
 
+
+/* map - leaflet */
+.leaflet-bottom.leaflet-right {
+  display: none !important;
+}
